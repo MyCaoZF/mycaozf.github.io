@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/2019/01/07/my-q/">
+    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/2019/01/07/gradient-descent/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CaoZF">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/07/my-q/" itemprop="url">my q</a></h1>
+                <a class="post-title-link" href="/2019/01/07/gradient-descent/" itemprop="url">gradient descent</a></h1>
         
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T16:52:41+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T18:41:49+08:00">
                 2019-01-07
               </time>
             
@@ -300,8 +300,30 @@
       
         
           
-            <p>$E = m c^2$ </p>
-
+            <h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><h5 id="梯度："><a href="#梯度：" class="headerlink" title="梯度："></a>梯度：</h5><ul>
+<li>在单变量的函数中，梯度就是函数的微分，代表着函数在某个定点切线的斜率。</li>
+<li>在多变量函数中，梯度是一个向量，梯度的方向就指出了函数在给定点上升最快的方向</li>
+</ul>
+<h5 id="参数更新公式："><a href="#参数更新公式：" class="headerlink" title="参数更新公式："></a>参数更新公式：</h5><script type="math/tex; mode=display">
+\theta^1 = \theta^0 - \alpha\nabla J(\theta)</script><p>​    其中$\alpha$为步长，$\nabla J(\theta)$为损失函数的梯度，$\theta$为权重</p>
+<h5 id="代价函数："><a href="#代价函数：" class="headerlink" title="代价函数："></a>代价函数：</h5><p>​    衡量模型预测的值$h_{\theta}(x^{(i)})$与真实值$y$之间的差异的函数</p>
+<p>形式：</p>
+<ul>
+<li>均方误差<script type="math/tex; mode=display">
+J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)^2</script>  $m$为训练样本的个数<script type="math/tex; mode=display">
+\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script></li>
+</ul>
+<ul>
+<li><p>交叉熵(用于逻辑回归)</p>
+<script type="math/tex; mode=display">
+J(\theta) = -\frac{1}{m}[\sum_{i=1}^{m}(y^{(i)}\log h_{\theta}(x^{(i)})+(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]</script><script type="math/tex; mode=display">
+\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script><p>​    其中</p>
+<script type="math/tex; mode=display">
+h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
+</ul>
+<h5 id="用矩阵表示：-均方误差"><a href="#用矩阵表示：-均方误差" class="headerlink" title="用矩阵表示：(均方误差)"></a>用矩阵表示：(均方误差)</h5><script type="math/tex; mode=display">
+        J(\theta) = \frac{1}{2m}(X\theta-y)^T(X\theta-y)</script><script type="math/tex; mode=display">
+\nabla J(\theta)=\frac{1}{m}X^T(X\theta-y)</script>
           
         
       
@@ -390,15 +412,6 @@
 
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
             
 
           </nav>
