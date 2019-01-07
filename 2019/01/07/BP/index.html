@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi Cao">
-<meta property="og:url" content="http://mycaozf.github.io/index.html">
+<meta name="description" content="反向传播(BP)算法$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重 $b_j^l$表示第$l$层的第$j$个神经元的偏置 $zj^l$表示第$l$层的第$j$个神经元的输入，即$z_j^l=\sum_kw{jk}^la_k^{l-1}+b_j^l$ $aj^l$表示第$l$层的第$j$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BP">
+<meta property="og:url" content="http://mycaozf.github.io/2019/01/07/BP/index.html">
 <meta property="og:site_name" content="Hi Cao">
+<meta property="og:description" content="反向传播(BP)算法$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重 $b_j^l$表示第$l$层的第$j$个神经元的偏置 $zj^l$表示第$l$层的第$j$个神经元的输入，即$z_j^l=\sum_kw{jk}^la_k^{l-1}+b_j^l$ $aj^l$表示第$l$层的第$j$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sig">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-07T11:57:16.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hi Cao">
+<meta name="twitter:title" content="BP">
+<meta name="twitter:description" content="反向传播(BP)算法$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重 $b_j^l$表示第$l$层的第$j$个神经元的偏置 $zj^l$表示第$l$层的第$j$个神经元的输入，即$z_j^l=\sum_kw{jk}^la_k^{l-1}+b_j^l$ $aj^l$表示第$l$层的第$j$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sig">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://mycaozf.github.io/">
+  <link rel="canonical" href="http://mycaozf.github.io/2019/01/07/BP/">
 
 
 
 
 
-  <title>Hi Cao</title>
+  <title>BP | Hi Cao</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/07/BP/" itemprop="url">BP</a></h1>
+          <h1 class="post-title" itemprop="name headline">BP</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h3 id="反向传播-BP-算法"><a href="#反向传播-BP-算法" class="headerlink" title="反向传播(BP)算法"></a>反向传播(BP)算法</h3><p>$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重</p>
+        <h3 id="反向传播-BP-算法"><a href="#反向传播-BP-算法" class="headerlink" title="反向传播(BP)算法"></a>反向传播(BP)算法</h3><p>$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重</p>
 <p>$b_j^l$表示第$l$层的第$j$个神经元的偏置</p>
 <p>$z<em>j^l$表示第$l$层的第$j$个神经元的输入，即$z_j^l=\sum_kw</em>{jk}^la_k^{l-1}+b_j^l$</p>
 <p>$a<em>j^l$表示第$l$层的第$j$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sigma(\sum_kw</em>{jk}^la_k^{l-1}+b_j^l)$   其中$\sigma$表示激活函数</p>
@@ -312,8 +311,6 @@
 <p>使用梯度下降训练参数：$w<em>{jk}^l = w</em>{jk}^l-\frac{\eta}{m}\delta_j^la_k^{l-1}$</p>
 <p>​                      $b_j^l = b_j^l-\frac{\eta}{m}\delta_j^l$ </p>
 
-          
-        
       
     </div>
     
@@ -330,154 +327,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/2019/01/07/gradient-descent/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CaoZF">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi Cao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/07/gradient-descent/" itemprop="url">gradient descent</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T18:41:49+08:00">
-                2019-01-07
-              </time>
+              <a href="/2019/01/07/gradient-descent/" rel="next" title="gradient descent">
+                <i class="fa fa-chevron-left"></i> gradient descent
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><h5 id="梯度："><a href="#梯度：" class="headerlink" title="梯度："></a>梯度：</h5><ul>
-<li>在单变量的函数中，梯度就是函数的微分，代表着函数在某个定点切线的斜率。</li>
-<li>在多变量函数中，梯度是一个向量，梯度的方向就指出了函数在给定点上升最快的方向</li>
-</ul>
-<h5 id="参数更新公式："><a href="#参数更新公式：" class="headerlink" title="参数更新公式："></a>参数更新公式：</h5><script type="math/tex; mode=display">
-\theta^1 = \theta^0 - \alpha\nabla J(\theta)</script><p>​    其中$\alpha$为步长，$\nabla J(\theta)$为损失函数的梯度，$\theta$为权重</p>
-<h5 id="代价函数："><a href="#代价函数：" class="headerlink" title="代价函数："></a>代价函数：</h5><p>​    衡量模型预测的值$h_{\theta}(x^{(i)})$与真实值$y$之间的差异的函数</p>
-<p>形式：</p>
-<ul>
-<li>均方误差<script type="math/tex; mode=display">
-J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)^2</script>  $m$为训练样本的个数<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script></li>
-</ul>
-<ul>
-<li><p>交叉熵(用于逻辑回归)</p>
-<script type="math/tex; mode=display">
-J(\theta) = -\frac{1}{m}[\sum_{i=1}^{m}(y^{(i)}\log h_{\theta}(x^{(i)})+(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]</script><script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script><p>​    其中</p>
-<script type="math/tex; mode=display">
-h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
-</ul>
-<h5 id="用矩阵表示：-均方误差"><a href="#用矩阵表示：-均方误差" class="headerlink" title="用矩阵表示：(均方误差)"></a>用矩阵表示：(均方误差)</h5><script type="math/tex; mode=display">
-        J(\theta) = \frac{1}{2m}(X\theta-y)^T(X\theta-y)</script><script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}X^T(X\theta-y)</script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -487,10 +358,11 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -498,6 +370,10 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
 
 
           
+
+  
+
+
 
         </div>
         
@@ -518,8 +394,17 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -561,6 +446,22 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播-BP-算法"><span class="nav-number">1.</span> <span class="nav-text">反向传播(BP)算法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -694,6 +595,10 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
