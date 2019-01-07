@@ -302,13 +302,14 @@
           
             <h3 id="反向传播-BP-算法"><a href="#反向传播-BP-算法" class="headerlink" title="反向传播(BP)算法"></a>反向传播(BP)算法</h3><p>$w_{jk}^l$表示第$l-1$层的第$k$个神经元连接到$l$层第$j$个神经元的权重</p>
 <p>$b_j^l$表示第$l$层的第$j$个神经元的偏置</p>
-<script type="math/tex; mode=display">z_j^l$$表示第$l$层的第$j$个神经元的输入，即$$z_j^l=\sum_kw_{jk}^la_k^{l-1}+b_j^l</script><p>$a<em>j^l​$表示第$l​$层的第$j​$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sigma(\sum_kw</em>{jk}^la_k^{l-1}+b_j^l)​$   其中$\sigma​$表示激活函数</p>
+<p>$z<em>j^l$ 表示第$l$层的第$j$个神经元的输入，即 $z_j^l=\sum_kw</em>{jk}^la_k^{l-1}+b_j^l$</p>
+<p>$a<em>j^l$表示第$l$层的第$j$个神经元的输出，即$a_j^l=\sigma(z_j^l)=\sigma(\sum_kw</em>{jk}^la_k^{l-1}+b_j^l)$   其中$\sigma$表示激活函数</p>
 <p>$\delta_j^l$表示第$l$层第$j$个神经元中产生的错误，定义为$\delta_j^l=\frac{\partial J}{\partial z_j^l}$    其中，有$\delta_j^l=\frac{\partial J}{\partial z_j^l}=\frac{\partial J}{\partial a_j^l}\cdot\frac{\partial a_j^l}{\partial z_j^l}$                                      用矩阵表示为$\frac{\partial J}{\partial a^L}\odot\frac{\partial a^L}{\partial z^L}=\nabla_aJ\odot\sigma’(z^L)$     ($\odot$表示Hadamard乘积，用于矩阵或向量间点对点乘法运算)</p>
 <p>又有$\delta<em>j^l=\frac{\partial J}{\partial z_j^l}=\sum_k\frac{\partial J}{\partial z_k^{l+1}}\cdot\frac{\partial  z_k^{l+1}}{\partial a_j^l}\cdot\frac{\partial a_j^l}{\partial z_k^l}=\sum_k\delta_k^{l+1}\cdot\frac{\partial (w</em>{kj}^{l+1}a<em>j^l+b_k^{l+1})}{\partial a_j^l}\cdot\sigma’(z_j^l)=\sum_k\delta_k^{l+1}\cdot w</em>{kj}^{l+1}\cdot\sigma’(z_j^l)$  </p>
 <p>用矩阵表示为$\delta^l = ((w^{l+1})^T\delta^{l+1})\odot\sigma’(z^l)$</p>
 <p>计算权重的梯度$\frac{\partial J}{\partial w<em>{jk}^l}=\frac{\partial J}{\partial z_k^l}\cdot\frac{\partial z_j^l}{\partial w</em>{jk}^l}=\delta<em>j^l\cdot\frac{\partial (w</em>{kj}^la<em>k^{l-1}+b_j^l)}{\partial w</em>{jk}^{l}}=a_k^{l-1}\delta_j^l$</p>
 <p>计算偏置的梯度$\frac{\partial J}{\partial b_j^l}=….=\delta_j^l$</p>
-<p>使用梯度下降训练参数：$w<em>{jk}^l = w</em>{jk}^l-\frac{\eta}{m}\delta_j^la_k^{l-1}$</p>
+<p>使用梯度下降训练参数：$w<em>{jk}^l = w</em>{jk}^l-\frac{\eta}{m}\delta_j^la_k^{l-1}​$</p>
 <p>​                      $b_j^l = b_j^l-\frac{\eta}{m}\delta_j^l$ </p>
 
           
