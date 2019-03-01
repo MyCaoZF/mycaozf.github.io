@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hi Cao">
 <meta property="og:description" content="支持向量机(SVM)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T15:23:27.255Z">
+<meta property="og:updated_time" content="2019-03-01T15:37:01.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVM">
 <meta name="twitter:description" content="支持向量机(SVM)">
@@ -307,7 +307,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-01T23:23:27+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-01T23:37:01+08:00">
                 2019-03-01
               </time>
             
@@ -397,17 +397,18 @@
         <h3 id="支持向量机-SVM"><a href="#支持向量机-SVM" class="headerlink" title="支持向量机(SVM)"></a>支持向量机(SVM)</h3><a id="more"></a>
 <ul>
 <li><h5 id="间隔"><a href="#间隔" class="headerlink" title="间隔"></a>间隔</h5><p>在支持向量机中, 我们用间隔刻画划分 超平面与样本之间的距离。</p>
-<p><strong>引理1</strong>：$\bf{R}^d$空间中某点$p$到超平面$w^Tx+b=0$的距离为</p>
+<p>引理1：$\bf{R}^d$空间中某点$p$到超平面$w^Tx+b=0$的距离为</p>
 </li>
 </ul>
 <script type="math/tex; mode=display">
-\frac{1}{||w||}|w^Tp+b|</script><p>​    <strong>定义1</strong>： 间隔表示距离划分超平面最近的样本到划分超平面距离的两倍, 即 </p>
+\frac{1}{||w||}|w^Tp+b|</script><p>​    定义1：间隔表示距离划分超平面最近的样本到划分超平面距离的两倍, 即</p>
 <script type="math/tex; mode=display">
-\gamma=2\min_i\frac{1}{||w||}|w^Tp+b|</script><pre><code> **定理1**：线性支持向量机的目标是找到一组合适的参数 $(w,b)$, 使得
-</code></pre><script type="math/tex; mode=display">
+\gamma=2\min_i\frac{1}{||w||}|w^Tp+b|</script><p>​    定理1：线性支持向量机的目标是找到一组合适的参数 $(w,b)$, 使得</p>
+<script type="math/tex; mode=display">
 \max_{w,b}\min_i\frac{2}{||w||}|w^Tp+b|</script><script type="math/tex; mode=display">
-s.t.\ \ \ \ \ \ \ \ \ \ \  y_i(w^Tx_i+b)\gt0,\ \ \ \ \ i=1,2,....m</script><pre><code> 即线性支持向量机希望在特征空间找到一个划分超平面, 将属于不同标记的样本分开, 并且该划分超平面距离各样本最远
-</code></pre><ul>
+s.t.\ \ \ \ \ \ \ \ \ \ \  y_i(w^Tx_i+b)\gt0,\ \ \ \ \ i=1,2,....m</script><p>​    </p>
+<p>​    即线性支持向量机希望在特征空间找到一个划分超平面, 将属于不同标记的样本分开, 并且该划分超平面距离    各样本最远</p>
+<ul>
 <li><h5 id="线性支持向量机基本型"><a href="#线性支持向量机基本型" class="headerlink" title="线性支持向量机基本型"></a>线性支持向量机基本型</h5><p><strong>引理2</strong>： 若 $(w^<em>,b^</em>) $是定理3优化问题的解, 那么对任意r &gt; 0, $(rw^<em>,rb^</em>) $仍是该优化问题的解</p>
 <p>由于对$(w,b)$的放缩不影响解, 为了简化优化问题, 我们约束$(w,b)$使得</p>
 <script type="math/tex; mode=display">
@@ -455,10 +456,7 @@ s.t.\qquad\qquad\sum^m_{i=1}\alpha_iy_i=0,\\
 </ul>
 </li>
 </ul>
-<pre><code>$$
 
-$$
-</code></pre>
       
     </div>
     
