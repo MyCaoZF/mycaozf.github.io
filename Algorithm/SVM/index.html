@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="逻辑回归">
+<meta name="description" content="支持向量机(SVM)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="logistic regression">
-<meta property="og:url" content="http://mycaozf.github.io/Algorithm/logistic-regression/index.html">
+<meta property="og:title" content="SVM">
+<meta property="og:url" content="http://mycaozf.github.io/Algorithm/SVM/index.html">
 <meta property="og:site_name" content="Hi Cao">
-<meta property="og:description" content="逻辑回归">
+<meta property="og:description" content="支持向量机(SVM)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://mycaozf.github.io/Algorithm/logistic-regression/sigmoid.jpg">
-<meta property="og:updated_time" content="2019-02-03T14:50:17.779Z">
+<meta property="og:updated_time" content="2019-03-01T15:23:27.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="logistic regression">
-<meta name="twitter:description" content="逻辑回归">
-<meta name="twitter:image" content="http://mycaozf.github.io/Algorithm/logistic-regression/sigmoid.jpg">
+<meta name="twitter:title" content="SVM">
+<meta name="twitter:description" content="支持向量机(SVM)">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://mycaozf.github.io/Algorithm/logistic-regression/">
+  <link rel="canonical" href="http://mycaozf.github.io/Algorithm/SVM/">
 
 
 
 
 
-  <title>logistic regression | Hi Cao</title>
+  <title>SVM | Hi Cao</title>
   
 
 
@@ -264,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/Algorithm/logistic-regression/">
+    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/Algorithm/SVM/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CaoZF">
@@ -281,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">logistic regression</h1>
+          <h1 class="post-title" itemprop="name headline">SVM</h1>
         
 
         <div class="post-meta">
@@ -293,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T10:53:02+08:00">
-                2019-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T16:46:15+08:00">
+                2019-02-27
               </time>
             
 
@@ -309,8 +307,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-03T22:50:17+08:00">
-                2019-02-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-01T23:23:27+08:00">
+                2019-03-01
               </time>
             
           </span>
@@ -359,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  430
+                  1k
                 </span>
               
 
@@ -375,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -396,43 +394,71 @@
       
 
       
-        <h3 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h3><a id="more"></a>
-<p>逻辑回归不同于线性回归，虽然带有回归二字，其本质做的是分类的活。</p>
+        <h3 id="支持向量机-SVM"><a href="#支持向量机-SVM" class="headerlink" title="支持向量机(SVM)"></a>支持向量机(SVM)</h3><a id="more"></a>
 <ul>
-<li><strong>sigmoid函数</strong></li>
+<li><h5 id="间隔"><a href="#间隔" class="headerlink" title="间隔"></a>间隔</h5><p>在支持向量机中, 我们用间隔刻画划分 超平面与样本之间的距离。</p>
+<p><strong>引理1</strong>：$\bf{R}^d$空间中某点$p$到超平面$w^Tx+b=0$的距离为</p>
+</li>
 </ul>
-<p>sigmoid函数是很常见的一种激活函数，由于其形状像“S”型，又称其为“S”型激活函数。其公式为</p>
 <script type="math/tex; mode=display">
-g(x) = \frac{1}{1+e^{-x}}</script><p>函数图像为：</p>
-<p><img src="/Algorithm/logistic-regression/sigmoid.jpg" alt="sigmoid"></p>
-<p>将输出限制在0-1之间，大于等于0.5判为1，小于0.5判为0</p>
-<ul>
-<li><strong>代价函数和梯度下降</strong></li>
+\frac{1}{||w||}|w^Tp+b|</script><p>​    <strong>定义1</strong>： 间隔表示距离划分超平面最近的样本到划分超平面距离的两倍, 即 </p>
+<script type="math/tex; mode=display">
+\gamma=2\min_i\frac{1}{||w||}|w^Tp+b|</script><pre><code> **定理1**：线性支持向量机的目标是找到一组合适的参数 $(w,b)$, 使得
+</code></pre><script type="math/tex; mode=display">
+\max_{w,b}\min_i\frac{2}{||w||}|w^Tp+b|</script><script type="math/tex; mode=display">
+s.t.\ \ \ \ \ \ \ \ \ \ \  y_i(w^Tx_i+b)\gt0,\ \ \ \ \ i=1,2,....m</script><pre><code> 即线性支持向量机希望在特征空间找到一个划分超平面, 将属于不同标记的样本分开, 并且该划分超平面距离各样本最远
+</code></pre><ul>
+<li><h5 id="线性支持向量机基本型"><a href="#线性支持向量机基本型" class="headerlink" title="线性支持向量机基本型"></a>线性支持向量机基本型</h5><p><strong>引理2</strong>： 若 $(w^<em>,b^</em>) $是定理3优化问题的解, 那么对任意r &gt; 0, $(rw^<em>,rb^</em>) $仍是该优化问题的解</p>
+<p>由于对$(w,b)$的放缩不影响解, 为了简化优化问题, 我们约束$(w,b)$使得</p>
+<script type="math/tex; mode=display">
+\min_i|w^Tx_i+b|=1</script><p>因此，定理1等价于</p>
+<script type="math/tex; mode=display">
+\min_{w,b}\frac{1}{2}w^Tw</script><script type="math/tex; mode=display">
+s.t.\ \ \ \ \ \ \ \ \ \min_iy_i(w^Tx_i+b)=1</script></li>
+<li><h5 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h5><p><strong>引理3</strong>：对偶问题是主问题的下界，即</p>
+<script type="math/tex; mode=display">
+\max_{\alpha,\beta}\min_uL(u,\alpha,\beta)\le\min_u\max_{\alpha,\beta}L(u,\alpha,\beta)</script></li>
+<li><h5 id="线性支持向量机对偶型"><a href="#线性支持向量机对偶型" class="headerlink" title="线性支持向量机对偶型"></a>线性支持向量机对偶型</h5><p>线性支持向量机的拉格朗日函数为</p>
+<script type="math/tex; mode=display">
+L(w,b,\alpha)=\frac{1}{2}w^Tw+\sum^m_{i=1}\alpha_i(1-y_i(w^Tx_i+b))</script><p>描述的优化问题是：</p>
+<script type="math/tex; mode=display">
+\min_{w,b}\max_{\alpha}\frac{1}{2}w^Tw+\sum^m_{i=1}\alpha_i(1-y_i(w^Tx_i+b))</script><script type="math/tex; mode=display">
+s.t. \ \ \ \ \ \ \ \ \ \alpha_i\ge0,\ \ i=1,2,...,m</script><p>其对偶问题为</p>
+<script type="math/tex; mode=display">
+\max_{\alpha}\min_{w,b}\frac{1}{2}w^Tw+\sum^m_{i=1}\alpha_i(1-y_i(w^Tx_i+b))........*</script><script type="math/tex; mode=display">
+s.t. \ \ \ \ \ \ \ \ \ \alpha_i\ge0,\ \ i=1,2,...,m</script><p><strong>定理2</strong>： (线性支持向量机对偶型)线性支持向量机的 对偶问题等价于找到一组合适的参数 $\alpha$, 使得</p>
+<script type="math/tex; mode=display">
+\min_\alpha\frac{1}{2}\sum^m_{i=1}\sum^m_{j=1}\alpha_i\alpha_jy_iy_jx_i^Tx_j-\sum^m_{i=1}\alpha_i</script><script type="math/tex; mode=display">
+s.t.\ \ \ \ \ \ \ \ \sum^m_{i=1}\alpha_iy_i=0\\
+\qquad\qquad\qquad\qquad \alpha_i\ge0,\ \ \ i=1,2,...,m</script><p>证明： 因为公式$*$内层对$(w,b)$的优化属于无约束优化问题, 我们可以通过令偏导等于零的方法得到$(w,b)$的最优值</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial w}=0\Rightarrow w=\sum^m_{i=1}\alpha_iy_ix_i\\
+\frac{\partial L}{\partial b}=0\Rightarrow\sum^m_{i=1}\alpha_iy_i=0</script><p>将其代入公式$*$可得</p>
+</li>
+<li><h5 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h5><ul>
+<li><p>非线性可分问题</p>
+<p>既然在原始的特征空间$\bf{R}^{d}$不是线性可分的, 支持向量机希望通过一个映射 $\phi: \bf{R}^d →\bf{R}^{\tilde{d}}$, 使得数据在新的空间是线性可分的。a</p>
+<p>令$\phi(x)$代表将样本$x$映射到$\bf{R}^{\tilde{d}}$中的特征向量, 参数$w$的维数也要相应变为$\tilde{d}$维。则支持向量机的基本型和对偶型相应变为</p>
+<script type="math/tex; mode=display">
+\min_{w,b}\frac{1}{2}w^Tw\\
+\qquad \qquad s.t.\qquad\qquad y_i(w^T\phi(x_i)+b)\ge1,\qquad i=1,2,...,m</script><script type="math/tex; mode=display">
+\min_\alpha\frac{1}{2}\sum^m_{i=1}\sum^m_{j=1}\alpha_i\alpha_jy_iy_j\phi(x_i)^T\phi(x_i)-\sum^m_{i=1}\alpha_i\\
+s.t.\qquad\qquad\sum^m_{i=1}\alpha_iy_i=0,\\
+\qquad\qquad\qquad\qquad\qquad\alpha_i\ge0,\qquad i=1,2,...m</script></li>
+<li><p>核技巧</p>
+<p>在支持向量机的对偶型中, 被映射到高维的特征向量总是以成对内积的形式存在, 即$\phi(x_i)^T\phi(x_j)$。如果先计算特征在$\bf{R}^{\tilde{d}}$空间的映射, 再计算内积，会非常的复杂。</p>
+<p>核技巧旨在将特征映射和内积这两步运算压缩为一步, 构造一个核函数 $\kappa(x_i,x_j)$, 使得</p>
+<script type="math/tex; mode=display">
+\kappa(x_i,x_j)=\phi(x_i)^T\phi(x_j)</script><p>几种常用核函数：</p>
+<p>| 名称     | 形式                                   | 优点                                            | 缺点                                |<br>| ———— | ——————————————————— | ———————————————————————- | —————————————————- |<br>| 线性核   | $x_i^Tx_j$                             | 有高效实现，不易过拟合                          | 无法解决非线性可分问题              |<br>| 多项式核 | $(\beta x_i^Tx_i+\theta)^n$            | 比线性核更一般，$n$直接描述了被映射空间的复杂度 | 参数多，当$n$很大时会导致计算不稳定 |<br>| RBF核    | $\exp(-\frac{||x_i-x_j||}{2\alpha^2})$ | 只有一个参数，没有计算不稳定问题                | 计算慢，过拟合风险大                |</p>
+</li>
 </ul>
-<p>我们把期望函数定义为：</p>
-<script type="math/tex; mode=display">
-h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}</script><p>来表示我们预测的输出，那么，有：</p>
-<script type="math/tex; mode=display">
-P(y=1|x;\theta)=h_{\theta}(x)</script><script type="math/tex; mode=display">
-P(y=0|x;\theta)=1-h_{\theta}(x)</script><p>可以得到：</p>
-<script type="math/tex; mode=display">
-P(y|x;\theta)=(h_{\theta}(x))^y(1-h_{\theta}(x))^{1-y}</script><p>最大似然函数为：</p>
-<script type="math/tex; mode=display">
-L(\theta)=Max\prod^m_{i=1}(h_{\theta}(x))^{y_i}(1-h_{\theta}(x))^{1-y_i}</script><p>化为对数似然：</p>
-<script type="math/tex; mode=display">
-l(\theta)=\log L(\theta)=Max\sum^m_{i=1}(y_i\log(h_{\theta}))+(1-y_i)\log(1-h_{\theta}(x_i))</script><p>代价函数为：</p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]</script><p>梯度为：</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j</script><p>仍可使用梯度下降法去更新参数$\theta$</p>
-<h3 id="正则化项"><a href="#正则化项" class="headerlink" title="正则化项"></a>正则化项</h3><p>正则化是为了消除过拟合而采用的一种方式，将逻辑回归的损失函数加上正则化项，表示为：</p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]+\frac{\lambda}{2m}\sum_{j=1}^{n}\theta^2_j</script><p>梯度为：</p>
-<p>对于$j=0$有</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j</script><p>对于$j\ge1$有</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=(\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j)+\frac{\lambda}{m}\theta_j</script>
+</li>
+</ul>
+<pre><code>$$
+
+$$
+</code></pre>
       
     </div>
     
@@ -456,8 +482,8 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learning-note/建立github博客/" rel="next" title="建立github博客">
-                <i class="fa fa-chevron-left"></i> 建立github博客
+              <a href="/Algorithm/logistic-regression/" rel="next" title="logistic regression">
+                <i class="fa fa-chevron-left"></i> logistic regression
               </a>
             
           </div>
@@ -465,10 +491,6 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Algorithm/SVM/" rel="prev" title="SVM">
-                SVM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,7 +615,7 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化项"><span class="nav-number">2.</span> <span class="nav-text">正则化项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#支持向量机-SVM"><span class="nav-number">1.</span> <span class="nav-text">支持向量机(SVM)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#间隔"><span class="nav-number">1.0.1.</span> <span class="nav-text">间隔</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性支持向量机基本型"><span class="nav-number">1.0.2.</span> <span class="nav-text">线性支持向量机基本型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对偶问题"><span class="nav-number">1.0.3.</span> <span class="nav-text">对偶问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性支持向量机对偶型"><span class="nav-number">1.0.4.</span> <span class="nav-text">线性支持向量机对偶型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#核函数"><span class="nav-number">1.0.5.</span> <span class="nav-text">核函数</span></a></li></ol></li></ol></div>
             
 
           </div>
