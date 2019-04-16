@@ -79,19 +79,21 @@
 
 
 
-<meta name="description" content="逻辑回归">
+<meta name="description" content="南巡，难寻——南京续">
 <meta property="og:type" content="article">
-<meta property="og:title" content="logistic regression">
-<meta property="og:url" content="http://mycaozf.github.io/Algorithm/logistic-regression/index.html">
+<meta property="og:title" content="南巡，难寻——南京续">
+<meta property="og:url" content="http://mycaozf.github.io/travel/南巡，难寻——南京续/index.html">
 <meta property="og:site_name" content="Hi Cao">
-<meta property="og:description" content="逻辑回归">
+<meta property="og:description" content="南巡，难寻——南京续">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://mycaozf.github.io/Algorithm/logistic-regression/sigmoid.jpg">
-<meta property="og:updated_time" content="2019-02-03T14:50:17.779Z">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——南京续/微信图片_20190416205847.jpg">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——南京续/微信图片_20190416205903.jpg">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——南京续/微信图片_20190416205857.jpg">
+<meta property="og:updated_time" content="2019-04-16T14:25:26.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="logistic regression">
-<meta name="twitter:description" content="逻辑回归">
-<meta name="twitter:image" content="http://mycaozf.github.io/Algorithm/logistic-regression/sigmoid.jpg">
+<meta name="twitter:title" content="南巡，难寻——南京续">
+<meta name="twitter:description" content="南巡，难寻——南京续">
+<meta name="twitter:image" content="http://mycaozf.github.io/travel/南巡，难寻——南京续/微信图片_20190416205847.jpg">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://mycaozf.github.io/Algorithm/logistic-regression/">
+  <link rel="canonical" href="http://mycaozf.github.io/travel/南巡，难寻——南京续/">
 
 
 
 
 
-  <title>logistic regression | Hi Cao</title>
+  <title>南巡，难寻——南京续 | Hi Cao</title>
   
 
 
@@ -264,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/Algorithm/logistic-regression/">
+    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/travel/南巡，难寻——南京续/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CaoZF">
@@ -281,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">logistic regression</h1>
+          <h1 class="post-title" itemprop="name headline">南巡，难寻——南京续</h1>
         
 
         <div class="post-meta">
@@ -293,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T10:53:02+08:00">
-                2019-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T20:47:29+08:00">
+                2019-04-16
               </time>
             
 
@@ -309,8 +311,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-02-03T22:50:17+08:00">
-                2019-02-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-16T22:25:26+08:00">
+                2019-04-16
               </time>
             
           </span>
@@ -328,8 +330,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/travel/" itemprop="url" rel="index">
+                    <span itemprop="name">travel</span>
                   </a>
                 </span>
 
@@ -359,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  430
+                  683
                 </span>
               
 
@@ -396,43 +398,18 @@
       
 
       
-        <h3 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h3><a id="more"></a>
-<p>逻辑回归不同于线性回归，虽然带有回归二字，其本质做的是分类的活。</p>
-<ul>
-<li><strong>sigmoid函数</strong></li>
-</ul>
-<p>sigmoid函数是很常见的一种激活函数，由于其形状像“S”型，又称其为“S”型激活函数。其公式为</p>
-<script type="math/tex; mode=display">
-g(x) = \frac{1}{1+e^{-x}}</script><p>函数图像为：</p>
-<p><img src="/Algorithm/logistic-regression/sigmoid.jpg" alt="sigmoid"></p>
-<p>将输出限制在0-1之间，大于等于0.5判为1，小于0.5判为0</p>
-<ul>
-<li><strong>代价函数和梯度下降</strong></li>
-</ul>
-<p>我们把期望函数定义为：</p>
-<script type="math/tex; mode=display">
-h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}</script><p>来表示我们预测的输出，那么，有：</p>
-<script type="math/tex; mode=display">
-P(y=1|x;\theta)=h_{\theta}(x)</script><script type="math/tex; mode=display">
-P(y=0|x;\theta)=1-h_{\theta}(x)</script><p>可以得到：</p>
-<script type="math/tex; mode=display">
-P(y|x;\theta)=(h_{\theta}(x))^y(1-h_{\theta}(x))^{1-y}</script><p>最大似然函数为：</p>
-<script type="math/tex; mode=display">
-L(\theta)=Max\prod^m_{i=1}(h_{\theta}(x))^{y_i}(1-h_{\theta}(x))^{1-y_i}</script><p>化为对数似然：</p>
-<script type="math/tex; mode=display">
-l(\theta)=\log L(\theta)=Max\sum^m_{i=1}(y_i\log(h_{\theta}))+(1-y_i)\log(1-h_{\theta}(x_i))</script><p>代价函数为：</p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]</script><p>梯度为：</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j</script><p>仍可使用梯度下降法去更新参数$\theta$</p>
-<h3 id="正则化项"><a href="#正则化项" class="headerlink" title="正则化项"></a>正则化项</h3><p>正则化是为了消除过拟合而采用的一种方式，将逻辑回归的损失函数加上正则化项，表示为：</p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]+\frac{\lambda}{2m}\sum_{j=1}^{n}\theta^2_j</script><p>梯度为：</p>
-<p>对于$j=0$有</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j</script><p>对于$j\ge1$有</p>
-<script type="math/tex; mode=display">
-\nabla J(\theta)=(\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}_j)+\frac{\lambda}{m}\theta_j</script>
+        <h2 id="南巡，难寻——南京续"><a href="#南巡，难寻——南京续" class="headerlink" title="南巡，难寻——南京续"></a>南巡，难寻——南京续</h2><a id="more"></a>
+<h5 id="南京理工——二月兰"><a href="#南京理工——二月兰" class="headerlink" title="南京理工——二月兰"></a>南京理工——二月兰</h5><p>4月8日，昨日游玩的疲惫已被今天的新奇所取代，又是元气满满，精神焕发。伸个懒腰，起床洗漱！</p>
+<p>​    扯开窗帘，阳光透过玻璃洒落屋内，惊起一片尘纤。洗漱后，收拾行囊放置前台，在火的带领下，来到南理二月兰。<img src="/travel/南巡，难寻——南京续/微信图片_20190416205847.jpg" alt=""></p>
+<p>​    置身葱绿紫雾之海，我又想起季老的二月兰了，和我眼前的二月兰是否同样呢？是否也无谓悲喜，只是怒放；也是纵浪大化中，一切顺其自然。我俯身向蝴蝶招手，蝴蝶未至，兀自舞动，如雾中仙子，紫气直冲霄汉。于林中穿行，惊起几只白鹭，振动白羽，鸣叫苍穹。</p>
+<h5 id="古鸡鸣寺"><a href="#古鸡鸣寺" class="headerlink" title="古鸡鸣寺"></a>古鸡鸣寺</h5><p>每至一地必看樱。北京玉渊潭，青岛中山公园，武汉等。于是在4月9日下午，樱花大道，一行三人欣然而至。</p>
+<p>​    转角便是樱花大道，我闭眼屏息，身子向右扭转90度，准备好樱花的绝美之景向我扑来。谁知抬眼望去，枝头无一粉色，便只是绿茫茫一片。风卷过，残花起，4月1日樱花大赏的牌子已显得黄旧，花季过，佳期失，独留残花余香，犹自慰藉游人。</p>
+<p>​    不免意兴阑珊，却在绿枝掩映间瞧见一抹黄色，细看时，是一座古刹，门口四个苍劲大字——古鸡鸣寺。<img src="/travel/南巡，难寻——南京续/微信图片_20190416205903.jpg" alt=""></p>
+<p>​    南朝四百八十寺之首，晨钟暮鼓，鸡鸣梵唱。 一路行至香鼎，置身香雾中，按东南西北(我也不知对不对，只知道是顺时针)拜过四方，将香插入鼎中。香气入鼻，不觉已到殿中。抬眼望到大佛宝相庄严，双腿发软，两股战战，膝盖一弯，便跪倒在地。入寺前曾列举想要许下的愿望，此刻却脑海空空，一个也想不起来。放不下的，想得到的，至死不渝的，喜怒哀乐爱欲惧在这一叩尽皆成灰。<br>​    每个人都有这么一片虚无的精神世界，在那世界中的神明，照见五蕴皆空，渡一切苦厄。僧是佛，道是三清，臣是皇，兵是将，你又是谁？</p>
+<h5 id="玄武湖"><a href="#玄武湖" class="headerlink" title="玄武湖"></a>玄武湖</h5><p>从古鸡鸣寺出，越古城墙，是玄武湖。<img src="/travel/南巡，难寻——南京续/微信图片_20190416205857.jpg" alt=""></p>
+<p>​    玄武湖方圆近五里，分作五洲(环洲、樱洲、菱洲、梁洲、翠洲)，洲洲堤桥相通，湖中倒映古城大厦。不知太白重游此地，会否将千余年所作“空余后湖月，波上对江州”拿出撕掉，重绘玄武繁华。</p>
+<p>​    静坐至溪溪下课，吃过火锅，到车站，下扬州。</p>
+
       
     </div>
     
@@ -456,8 +433,8 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learning-note/建立github博客/" rel="next" title="建立github博客">
-                <i class="fa fa-chevron-left"></i> 建立github博客
+              <a href="/travel/南巡，难寻——南京/" rel="next" title="南巡，难寻——南京">
+                <i class="fa fa-chevron-left"></i> 南巡，难寻——南京
               </a>
             
           </div>
@@ -465,10 +442,6 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Algorithm/SVM/" rel="prev" title="SVM">
-                SVM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,7 +566,7 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化项"><span class="nav-number">2.</span> <span class="nav-text">正则化项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#南巡，难寻——南京续"><span class="nav-number">1.</span> <span class="nav-text">南巡，难寻——南京续</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#南京理工——二月兰"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">南京理工——二月兰</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#古鸡鸣寺"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">古鸡鸣寺</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#玄武湖"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">玄武湖</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -831,26 +804,6 @@ J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}\log(h_{\theta}(x^{(i)}))-(1-y^{(i)}
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
