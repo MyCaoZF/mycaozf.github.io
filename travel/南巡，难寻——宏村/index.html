@@ -79,17 +79,22 @@
 
 
 
-<meta name="description" content="梯度下降法">
+<meta name="description" content="南巡，难寻——宏村">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gradient descent">
-<meta property="og:url" content="http://mycaozf.github.io/Algorithm/gradient-descent/index.html">
+<meta property="og:title" content="南巡，难寻——宏村">
+<meta property="og:url" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/index.html">
 <meta property="og:site_name" content="Hi Cao">
-<meta property="og:description" content="梯度下降法">
+<meta property="og:description" content="南巡，难寻——宏村">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-13T09:10:08.836Z">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/18b544fe7b2171f391f30623ba2adab.jpg">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/84eb3c6b79cd6f1e8281135587702e6.jpg">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/8d385c0f06fc5deaaae1742c4b27363.jpg">
+<meta property="og:image" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/dc9e413f6751ce61591197edc6e74be.jpg">
+<meta property="og:updated_time" content="2019-05-19T11:30:55.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gradient descent">
-<meta name="twitter:description" content="梯度下降法">
+<meta name="twitter:title" content="南巡，难寻——宏村">
+<meta name="twitter:description" content="南巡，难寻——宏村">
+<meta name="twitter:image" content="http://mycaozf.github.io/travel/南巡，难寻——宏村/18b544fe7b2171f391f30623ba2adab.jpg">
 
 
 
@@ -119,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://mycaozf.github.io/Algorithm/gradient-descent/">
+  <link rel="canonical" href="http://mycaozf.github.io/travel/南巡，难寻——宏村/">
 
 
 
 
 
-  <title>gradient descent | Hi Cao</title>
+  <title>南巡，难寻——宏村 | Hi Cao</title>
   
 
 
@@ -262,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/Algorithm/gradient-descent/">
+    <link itemprop="mainEntityOfPage" href="http://mycaozf.github.io/travel/南巡，难寻——宏村/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CaoZF">
@@ -279,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">gradient descent</h1>
+          <h1 class="post-title" itemprop="name headline">南巡，难寻——宏村</h1>
         
 
         <div class="post-meta">
@@ -291,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T18:41:49+08:00">
-                2019-01-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T21:53:46+08:00">
+                2019-05-07
               </time>
             
 
@@ -307,8 +312,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-13T17:10:08+08:00">
-                2019-01-13
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-19T19:30:55+08:00">
+                2019-05-19
               </time>
             
           </span>
@@ -326,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/travel/" itemprop="url" rel="index">
+                    <span itemprop="name">travel</span>
                   </a>
                 </span>
 
@@ -357,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  281
+                  801
                 </span>
               
 
@@ -373,7 +378,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -394,31 +399,15 @@
       
 
       
-        <h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><a id="more"></a>
-<h5 id="梯度："><a href="#梯度：" class="headerlink" title="梯度："></a>梯度：</h5><ul>
-<li>在单变量的函数中，梯度就是函数的微分，代表着函数在某个定点切线的斜率。</li>
-<li>在多变量函数中，梯度是一个向量，梯度的方向就指出了函数在给定点上升最快的方向</li>
-</ul>
-<h5 id="参数更新公式："><a href="#参数更新公式：" class="headerlink" title="参数更新公式："></a>参数更新公式：</h5><script type="math/tex; mode=display">
-\theta^1 = \theta^0 - \alpha\nabla J(\theta)</script><p>​    其中$\alpha$为步长，$\nabla J(\theta)$为损失函数的梯度，$\theta$为权重</p>
-<h5 id="代价函数："><a href="#代价函数：" class="headerlink" title="代价函数："></a>代价函数：</h5><p>​    衡量模型预测的值$h_{\theta}(x^{(i)})$与真实值$y$之间的差异的函数</p>
-<p>形式：</p>
-<ul>
-<li>均方误差<script type="math/tex; mode=display">
-J(\theta) = \frac{1}{2m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)^2</script>  $m$为训练样本的个数<script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script></li>
-</ul>
-<ul>
-<li><p>交叉熵(用于逻辑回归)</p>
-<script type="math/tex; mode=display">
-J(\theta) = -\frac{1}{m}[\sum_{i=1}^{m}(y^{(i)}\log h_{\theta}(x^{(i)})+(1-y^{(i)})\log(1-h_{\theta}(x^{(i)}))]</script><script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}\sum_{i=1}^{m}(h_{\theta}(x^{(i)})-y)x^{(i)}</script><p>​    其中</p>
-<script type="math/tex; mode=display">
-h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
-</ul>
-<h5 id="用矩阵表示：-均方误差"><a href="#用矩阵表示：-均方误差" class="headerlink" title="用矩阵表示：(均方误差)"></a>用矩阵表示：(均方误差)</h5><script type="math/tex; mode=display">
-        J(\theta) = \frac{1}{2m}(X\theta-y)^T(X\theta-y)</script><script type="math/tex; mode=display">
-\nabla J(\theta)=\frac{1}{m}X^T(X\theta-y)</script>
+        <h2 id="南巡，难寻——宏村"><a href="#南巡，难寻——宏村" class="headerlink" title="南巡，难寻——宏村"></a>南巡，难寻——宏村</h2><a id="more"></a>
+<p>​    一生痴绝处，无梦到徽州。</p>
+<p>​    辞别南京扬州，从合肥换乘，于4月11日中午抵达黄山市。坐上旅游大巴前往宏村，山间公路状如羊肠，蜿蜒曲折，途中深涧沟壑，陡坡急弯，惊慌中抓住座椅不敢妄动。将头偏向窗外，便是成片的梯田，油菜花花期已过，一片绿汪汪里点缀着零星黄色，更远处层峦叠嶂，云吞雾隐，莫非已至群玉山中？途中经过了齐云山和西递，未作停留，大约一个多小时的山路，便到了宏村。</p>
+<p>​    青山横北郭，白水绕东城。宏村被群山包围着，像是妙龄女子同时获得了几个强壮男人的青睐。下车便是民宿老板迎至门外，从我手中接过行李，一路指引着到达民宿。入的村内，便见到了传说中的宏村南湖。许是刚下过大雨的缘故，湖水略显浑浊。湖南岸倩影排座，画板斑斓，远看去，画板中画与现实之境相得益彰，恍惚间，自己好似也置身画中，又是谁在用画笔勾勒这山水和我这风度翩翩的伟男子呢？<img src="/travel/南巡，难寻——宏村/18b544fe7b2171f391f30623ba2adab.jpg" alt="">    </p>
+<p>​    无边细雨湿春泥，一边吟过画桥西。山云相接，被青灰色的墨汁自下而上刷过一般，阳光透过淡青色的云雾，给水墨宏村镶上一层金边。卧虎藏龙中李慕白牵马过画桥，一心想交出青冥剑，退隐江湖，过安静平和的日子。然人在江湖，身不由己，为恶者，不能以德服之，还需心中之直，宝剑之利。我身着汉服走在青石板街，此时，我又不是舞文弄墨的酸腐儒生，而是浪迹天涯的仗剑侠客，十步杀一人，千里不留行。<img src="/travel/南巡，难寻——宏村/84eb3c6b79cd6f1e8281135587702e6.jpg" alt=""></p>
+<p>·    宏村大多处在平坦地带，靠山脚，依山势而上，其背倚黄山余脉羊栈领、雷岗山等，地势较高，状似牛型。村口的两颗古树是牛角，村周四处小桥是牛蹄，月沼是牛肚，村庄是牛身。村子屋舍俨然，徽商屋内天花板更是彩绘金丝，不过更喜普通人家的古朴陈旧。来到月沼旁得月楼，得月楼，取自近水楼台先得月之意，餐桌上山笋鲜美，腊肉浓香，猴魁清雅，不禁食欲大开。<img src="/travel/南巡，难寻——宏村/8d385c0f06fc5deaaae1742c4b27363.jpg" alt=""></p>
+<p>​    次日清晨，来到村外田野，又是一番清新亮丽之景，在水墨画中，出现了一抹奇色。山脚下的田野上，卧眠的水牛，嚼草的马儿，湿地里，游动的鸭子，山边飘荡的热气球，一片自由祥和。走过水牛骏马热气球，却发现有绳子拴住，连嘎嘎的鸭子，也是用篱笆隔开。是哦，哪有绝对的自由和无拘无束，我身负手铐脚链，眼中全是自由，这便够了。<img src="/travel/南巡，难寻——宏村/dc9e413f6751ce61591197edc6e74be.jpg" alt=""></p>
+<p>​    玉蝶穿花零碎锦，一天飞絮斗轻狂。走在宏村，走入山野，仿佛我500年前也曾在这，许下来生再会。</p>
+
       
     </div>
     
@@ -442,8 +431,8 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/read/game-theory/" rel="next" title="game theory">
-                <i class="fa fa-chevron-left"></i> game theory
+              <a href="/travel/南巡，难寻——扬州/" rel="next" title="南巡，难寻——扬州">
+                <i class="fa fa-chevron-left"></i> 南巡，难寻——扬州
               </a>
             
           </div>
@@ -451,10 +440,6 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Algorithm/BP/" rel="prev" title="BP">
-                BP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +564,7 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降法"><span class="nav-number">1.</span> <span class="nav-text">梯度下降法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#梯度："><span class="nav-number">1.0.1.</span> <span class="nav-text">梯度：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参数更新公式："><span class="nav-number">1.0.2.</span> <span class="nav-text">参数更新公式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代价函数："><span class="nav-number">1.0.3.</span> <span class="nav-text">代价函数：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用矩阵表示：-均方误差"><span class="nav-number">1.0.4.</span> <span class="nav-text">用矩阵表示：(均方误差)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#南巡，难寻——宏村"><span class="nav-number">1.</span> <span class="nav-text">南巡，难寻——宏村</span></a></li></ol></div>
             
 
           </div>
@@ -817,26 +802,6 @@ h_{\theta}(x^{(i)}) = \frac{1}{1+e^{-\theta x}}</script></li>
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
