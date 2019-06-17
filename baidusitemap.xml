@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mycaozf.github.io/Algorithm/RNN-LSTM/</loc>
+    <lastmod>2019-06-17</lastmod>
+  </url>  <url>
+    <loc>http://mycaozf.github.io/Algorithm/CNN/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
+    <loc>http://mycaozf.github.io/travel/%E5%8D%97%E5%B7%A1%EF%BC%8C%E9%9A%BE%E5%AF%BB%E2%80%94%E2%80%94%E9%BB%84%E5%B1%B1/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
     <loc>http://mycaozf.github.io/travel/%E5%8D%97%E5%B7%A1%EF%BC%8C%E9%9A%BE%E5%AF%BB%E2%80%94%E2%80%94%E5%AE%8F%E6%9D%91/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
