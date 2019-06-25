@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mycaozf.github.io/Algorithm/Q-learning-sarsa-sarsa-lambda/</loc>
+    
+    <lastmod>2019-06-25T03:36:50.545Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mycaozf.github.io/Algorithm/RNN-LSTM/</loc>
     
     <lastmod>2019-06-17T08:57:04.031Z</lastmod>
